@@ -37,28 +37,30 @@
 import { computed } from "vue";
 
 const props = defineProps({
-  text: { type: String, default: "Kunjungi showroom EV kami di Balikpapan" },
-  query: { type: String, default: "Balikpapan, Kalimantan Timur" },
-  mapHref: { type: String, default: "" },
-  centerLat: { type: Number, default: -1.2379 },
-  centerLng: { type: Number, default: 116.852 },
-  zoom: { type: Number, default: 13 },
+  text: {
+    type: String,
+    default: "Showroom Mobil Listrik - EV Rent Balikpapan",
+  },
+  // Koordinat diambil dari link maps yang Anda kirim
+  centerLat: { type: Number, default: -1.2509417 },
+  centerLng: { type: Number, default: 116.8636626 },
+  zoom: { type: Number, default: 15 },
+
+  mapHref: {
+    type: String,
+    default:
+      "https://www.google.com/maps/place/Showroom+Mobil+Listrik+-+EV+Rent+Balikpapan/@-1.2509417,116.8636626,17z/data=!3m1!4b1!4m6!3m5!1s0x2df147005b92787d:0xb305156437763a5!8m2!3d-1.2509417!4d116.8636626",
+  },
 });
 
 const mapLink = computed(() => {
-  if (props.mapHref) return props.mapHref;
-  return `https://www.google.com/maps/@${props.centerLat},${props.centerLng},${props.zoom}z`;
+  return (
+    props.mapHref ||
+    `https://www.google.com/maps?q=${props.centerLat},${props.centerLng}`
+  );
 });
 
 const embedSrc = computed(() => {
-  if (props.mapHref) {
-    const hasEmbed = props.mapHref.includes("output=embed");
-    return hasEmbed
-      ? props.mapHref
-      : `${props.mapHref}${
-          props.mapHref.includes("?") ? "&" : "?"
-        }output=embed`;
-  }
-  return `https://www.google.com/maps?ll=${props.centerLat},${props.centerLng}&z=${props.zoom}&t=m&output=embed`;
+  return `https://maps.google.com/maps?q=${props.centerLat},${props.centerLng}&z=${props.zoom}&output=embed`;
 });
 </script>

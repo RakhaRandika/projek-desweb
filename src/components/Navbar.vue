@@ -1,138 +1,199 @@
 <template>
   <nav
     :class="[
-      'fixed inset-x-0 top-0 z-50 transition',
+      'fixed w-full z-50 top-0 start-0 border-b transition-all duration-300',
       scrolled
-        ? 'bg-white/85 backdrop-blur-md shadow-md'
-        : 'bg-white/60 backdrop-blur-md shadow',
+        ? 'bg-white/90 backdrop-blur-md border-gray-200 shadow-sm'
+        : 'bg-white/60 backdrop-blur-sm border-transparent',
     ]"
   >
-    <div class="max-w-7xl mx-auto px-6 py-4 md:py-5">
-      <div class="flex justify-between items-center">
-        <router-link to="/" class="flex items-center space-x-3">
-          <img
-            src="@/assets/logo.png"
-            alt="EV Mobil"
-            class="h-10 w-auto md:h-12"
-          />
-          <span
-            class="text-2xl md:text-3xl font-extrabold tracking-tight text-green-700"
-          >
-            EV
-            <span
-              class="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900"
-              >Mobil</span
-            >
-          </span>
-        </router-link>
-
-        <div class="hidden md:flex items-center gap-10">
-          <router-link
-            to="/"
-            class="text-[17px] md:text-lg font-semibold text-gray-800 hover:text-green-600"
-            active-class="text-green-600"
-            >Beranda</router-link
-          >
-          <router-link
-            to="/cars"
-            class="text-[17px] md:text-lg font-semibold text-gray-800 hover:text-green-600"
-            active-class="text-green-600"
-            >Daftar Mobil</router-link
-          >
-          <router-link
-            to="/about"
-            class="text-[17px] md:text-lg font-semibold text-gray-800 hover:text-green-600"
-            active-class="text-green-600"
-            >Tentang Kami</router-link
-          >
-          <router-link
-            to="/service"
-            class="text-[17px] md:text-lg font-semibold text-gray-800 hover:text-green-600"
-            active-class="text-green-600"
-            >Layanan</router-link
-          >
-          <router-link
-            to="/contact"
-            class="text-[17px] md:text-lg font-semibold text-gray-800 hover:text-green-600"
-            active-class="text-green-600"
-            >Kontak</router-link
-          >
-        </div>
-
-        <button
-          @click="mobileMenuOpen = !mobileMenuOpen"
-          class="md:hidden text-gray-800 focus:outline-none"
-          aria-label="Toggle menu"
+    <div
+      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+    >
+      <router-link
+        to="/"
+        class="flex items-center space-x-3 rtl:space-x-reverse"
+      >
+        <img src="@/assets/logo.png" class="h-8 md:h-10" alt="EV Mobil Logo" />
+        <span
+          class="self-center text-2xl md:text-3xl font-extrabold whitespace-nowrap text-green-700"
         >
-          <svg
-            class="w-8 h-8"
-            fill="none"
+          EV<span class="text-gray-900">Mobil</span>
+        </span>
+      </router-link>
+
+      <button
+        @click="mobileMenuOpen = !mobileMenuOpen"
+        type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        aria-controls="navbar-default"
+        :aria-expanded="mobileMenuOpen"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          v-if="!mobileMenuOpen"
+          class="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
             stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              v-if="!mobileMenuOpen"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-            <path
-              v-else
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-      </div>
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"
+          />
+        </svg>
+        <svg
+          v-else
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
 
-      <div v-if="mobileMenuOpen" class="md:hidden mt-3 space-y-2">
-        <router-link
-          to="/"
-          class="block py-2 text-gray-900 font-medium hover:text-green-600"
-          @click="mobileMenuOpen = false"
-          >Beranda</router-link
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul
+          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0"
         >
-        <router-link
-          to="/cars"
-          class="block py-2 text-gray-900 font-medium hover:text-green-600"
-          @click="mobileMenuOpen = false"
-          >Daftar Mobil</router-link
-        >
-        <router-link
-          to="/about"
-          class="block py-2 text-gray-900 font-medium hover:text-green-600"
-          @click="mobileMenuOpen = false"
-          >Tentang Kami</router-link
-        >
-        <router-link
-          to="/service"
-          class="block py-2 text-gray-900 font-medium hover:text-green-600"
-          @click="mobileMenuOpen = false"
-          >Layanan</router-link
-        >
-        <router-link
-          to="/contact"
-          class="block py-2 text-gray-900 font-medium hover:text-green-600"
-          @click="mobileMenuOpen = false"
-          >Kontak</router-link
-        >
+          <li>
+            <router-link
+              to="/"
+              class="block py-2 px-3 rounded md:p-0 transition-colors"
+              active-class="text-green-700 md:text-green-700"
+              :class="[
+                $route.path === '/'
+                  ? 'text-white bg-green-700 md:bg-transparent'
+                  : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700',
+              ]"
+            >
+              Beranda
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              to="/cars"
+              class="block py-2 px-3 rounded md:p-0 transition-colors text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700"
+              active-class="!text-green-700 font-bold"
+            >
+              Daftar Mobil
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              to="/about"
+              class="block py-2 px-3 rounded md:p-0 transition-colors text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700"
+              active-class="!text-green-700 font-bold"
+            >
+              Tentang Kami
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              to="/service"
+              class="block py-2 px-3 rounded md:p-0 transition-colors text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700"
+              active-class="!text-green-700 font-bold"
+            >
+              Layanan
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              to="/contact"
+              class="block py-2 px-3 rounded md:p-0 transition-colors text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700"
+              active-class="!text-green-700 font-bold"
+            >
+              Kontak
+            </router-link>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <div class="h-[3px] bg-gradient-to-r from-grey-500 to-indigo-500/80"></div>
+    <div
+      v-show="mobileMenuOpen"
+      class="md:hidden w-full bg-white border-t border-gray-100 shadow-lg"
+    >
+      <ul class="flex flex-col p-4 font-medium space-y-2">
+        <li>
+          <router-link
+            to="/"
+            class="block py-2 px-3 rounded hover:bg-gray-100 hover:text-green-700"
+            active-class="bg-green-50 text-green-700 font-bold"
+            @click="mobileMenuOpen = false"
+          >
+            Beranda
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            to="/cars"
+            class="block py-2 px-3 rounded hover:bg-gray-100 hover:text-green-700"
+            active-class="bg-green-50 text-green-700 font-bold"
+            @click="mobileMenuOpen = false"
+          >
+            Daftar Mobil
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            to="/about"
+            class="block py-2 px-3 rounded hover:bg-gray-100 hover:text-green-700"
+            active-class="bg-green-50 text-green-700 font-bold"
+            @click="mobileMenuOpen = false"
+          >
+            Tentang Kami
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            to="/service"
+            class="block py-2 px-3 rounded hover:bg-gray-100 hover:text-green-700"
+            active-class="bg-green-50 text-green-700 font-bold"
+            @click="mobileMenuOpen = false"
+          >
+            Layanan
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            to="/contact"
+            class="block py-2 px-3 rounded hover:bg-gray-100 hover:text-green-700"
+            active-class="bg-green-50 text-green-700 font-bold"
+            @click="mobileMenuOpen = false"
+          >
+            Kontak
+          </router-link>
+        </li>
+      </ul>
+    </div>
+
+    <div
+      class="h-[2px] bg-gradient-to-r from-gray-200 via-green-500 to-gray-200 opacity-70"
+    ></div>
   </nav>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+
 const mobileMenuOpen = ref(false);
 const scrolled = ref(false);
+
 function onScroll() {
-  scrolled.value = window.scrollY > 4;
+  scrolled.value = window.scrollY > 10;
 }
+
 onMounted(() => window.addEventListener("scroll", onScroll));
 onUnmounted(() => window.removeEventListener("scroll", onScroll));
 </script>

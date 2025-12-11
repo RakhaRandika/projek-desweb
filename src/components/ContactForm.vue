@@ -39,7 +39,6 @@
 </template>
 
 <script setup>
-/* eslint-env vue/setup-compiler-macros */
 import { reactive, computed } from "vue";
 
 const props = defineProps({

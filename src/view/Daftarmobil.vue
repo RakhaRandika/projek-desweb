@@ -15,7 +15,12 @@
     <CarsFilterBar :categories="categories" v-model="activeCategory" />
 
     <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-8 items-stretch">
-      <CarCard v-for="c in filteredCars" :key="c.id" v-bind="c" />
+      <CarCard
+        v-for="c in filteredCars"
+        :key="c.id"
+        v-bind="c"
+        @inquire="handleInquire"
+      />
     </div>
 
     <section class="bg-gray-200 mt-16 rounded-md p-6">
@@ -53,17 +58,21 @@
       </div>
     </section>
 
-    <section class="text-center py-10">
-      <p class="text-gray-700 mb-4">
-        Tertarik dengan Mobil Tertentu? Hubungi kami untuk info detail, test
-        drive, atau booking.
-      </p>
-      <router-link
-        to="/contact"
-        class="inline-flex items-center justify-center rounded-md bg-black text-white px-5 py-2 text-sm font-semibold hover:bg-gray-800 transition"
-      >
-        Hubungi Kami Sekarang
-      </router-link>
+    <section class="bg-gray-200 py-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="bg-white rounded-md p-8 shadow-sm text-center">
+          <p class="text-gray-700 mb-4">
+            Tertarik dengan Mobil Tertentu? Hubungi kami untuk info detail, test
+            drive, atau booking.
+          </p>
+          <router-link
+            to="/contact"
+            class="inline-flex items-center justify-center rounded-md bg-black text-white px-5 py-2 text-sm font-semibold hover:bg-gray-800 transition"
+          >
+            Hubungi Kami Sekarang
+          </router-link>
+        </div>
+      </div>
     </section>
   </main>
   <AppFooter />
@@ -81,6 +90,9 @@ import wulingLImg from "@/assets/Wuling L.png";
 import wulingBSIImg from "@/assets/wulingBSIOTO.png";
 import cheryImg from "@/assets/chery.png";
 import cheryJ6Img from "@/assets/creey j6.png";
+import toyota2Img from "@/assets/Toyota C-Hr Hybrid.png";
+import hyundai2Img from "@/assets/hyundaikona.png";
+import toyota1Img from "@/assets/toyota (2).png";
 
 export default {
   name: "DaftarMobilPages",
@@ -92,7 +104,7 @@ export default {
       cars: [
         {
           id: 1,
-          name: "Wuling Air EV",
+          name: "Wuling Air ",
           image: wulingImg,
           capacity: 2,
           range: 100,
@@ -101,7 +113,7 @@ export default {
         },
         {
           id: 2,
-          name: "Wuling Bingo EV",
+          name: "Wuling Bingo ",
           image: wulingLImg,
           capacity: 4,
           range: 200,
@@ -110,7 +122,7 @@ export default {
         },
         {
           id: 3,
-          name: "Wuling Cloud EV",
+          name: "Wuling Cloud ",
           image: wulingBSIImg,
           capacity: 4,
           range: 300,
@@ -119,7 +131,7 @@ export default {
         },
         {
           id: 4,
-          name: "Hyundai Kona EV",
+          name: "Hyundai Kona ",
           image: hyundaiImg,
           capacity: 4,
           range: 356,
@@ -128,7 +140,7 @@ export default {
         },
         {
           id: 5,
-          name: "Toyota",
+          name: "Toyota cZ4X",
           image: toyotaImg,
           capacity: 5,
           range: 300,
@@ -137,7 +149,7 @@ export default {
         },
         {
           id: 6,
-          name: "Chery",
+          name: "Chery Omoda E5",
           image: cheryImg,
           capacity: 6,
           range: 500,
@@ -153,6 +165,33 @@ export default {
           power: 710,
           price: "950.000",
         },
+        {
+          id: 8,
+          name: "Toyota C-Hr Hybrid",
+          image: toyota2Img,
+          capacity: 2,
+          range: 500,
+          power: 800,
+          price: "450.000",
+        },
+        {
+          id: 9,
+          name: "Hyundai Kona 2024 Hybrid",
+          image: hyundai2Img,
+          capacity: 4,
+          range: 500,
+          power: 900,
+          price: "650.000",
+        },
+        {
+          id: 10,
+          name: "Toyota",
+          image: toyota1Img,
+          capacity: 4,
+          range: 500,
+          power: 900,
+          price: "650.000",
+        },
       ],
     };
   },
@@ -161,6 +200,13 @@ export default {
       if (this.activeCategory === "Semua") return this.cars;
       const cat = this.activeCategory.toLowerCase();
       return this.cars.filter((c) => c.name.toLowerCase().includes(cat));
+    },
+  },
+  methods: {
+    handleInquire(payload) {
+      this.$router.push(
+        `/contact?car=${encodeURIComponent(payload.name || payload.id)}`
+      );
     },
   },
 };

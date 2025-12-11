@@ -86,7 +86,6 @@
 </template>
 
 <script setup>
-/* eslint-env vue/setup-compiler-macros */
 import { computed, ref } from "vue";
 import ContactForm from "@/components/ContactForm.vue";
 import ContactInfo from "@/components/ContactInfo.vue";
@@ -100,7 +99,8 @@ const info = {
   email: "info@evrent.id",
   hours: "Senin - Jumat: 08:00 - 20:00\nSabtu - Minggu: 09:00 - 18:00",
 };
-const map = "https://maps.google.com/?q=Balikpapan";
+const map =
+  "https://www.google.com/maps/place/ABM+Rental/@-1.2485116,116.8450384,14z/data=!4m10!1m2!2m1!1sabm!3m6!1s0x2df1474a5d858a2f:0x51ebe60d16a6d4c8!8m2!3d-1.273914!4d116.867123!15sCgNhYm2SARFjYXJfcmVudGFsX2FnZW5jeaoBNBABKgciA2FibSgmMh4QASIallKoqUEVzxvgWf03jnvJLWMrlIt8PKRCYpsyBxACIgNhYm3gAQA!16s%2Fg%2F11t29fvr2f?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3Dhttps://www.google.com/maps/place/ABM+Rental/@-1.2744224,116.866392,17.03z/data=!4m12!1m5!3m4!2zMcKwMTUnMDMuNCJTIDExNsKwNTEnNDkuMiJF!8m2!3d-1.2509417!4d116.8636626!3m5!1s0x2df1474a5d858a2f:0x51ebe60d16a6d4c8!8m2!3d-1.273914!4d116.867123!16s%2Fg%2F11t29fvr2f?hl=en-US&entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D";
 
 const faqs = [
   {

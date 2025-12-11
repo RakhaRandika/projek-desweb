@@ -15,13 +15,17 @@
       class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center"
     >
       <div>
-        <h3 class="text-2xl font-bold mb-5 text-emerald-700">Siapa Kami?</h3>
+        <h3 class="text-2xl font-bold mb-5 text-emerald-700">
+          Muhammad Rakha Randiak
+        </h3>
         <p class="text-gray-700 leading-relaxed mb-4">
-          <span class="font-semibold text-emerald-600">EV Rent</span> adalahdf,
-          perusahaan rental mobil listrik pertama di Indonesia yang berkomitmen
-          untuk masa depan transportasi yang lebih bersih dan berkelanjutan.
-          Berdiri sejak tahun 2022, kami menjadi pionir dalam layanan sewa
-          kendaraan listrik modern.
+          <span class="font-semibold text-emerald-600"
+            >Muhammad Rakha Randika</span
+          >
+          adalahdf, perusahaan rental mobil listrik pertama di Indonesia yang
+          berkomitmen untuk masa depan transportasi yang lebih bersih dan
+          berkelanjutan. Berdiri sejak tahun 2022, kami menjadi pionir dalam
+          layanan sewa kendaraan listrik modern.
         </p>
         <p class="text-gray-700 leading-relaxed mb-4">
           Armada kami mencakup brand ternama seperti <strong>Toyota</strong>,
@@ -41,7 +45,7 @@
       >
         <img
           class="w-full h-[420px] object-cover"
-          src="@/assets/women.jpg"
+          src="@/assets/rakha.png"
           alt="EV Rent - mobil listrik"
         />
       </div>
@@ -50,11 +54,8 @@
     <section class="max-w-6xl mx-auto px-6 pb-10">
       <div class="grid md:grid-cols-2 gap-8">
         <div class="bg-gray-100 rounded-md p-6 text-left">
-          <h4 class="text-xl font-semibold mb-3">💡 Visi kami</h4>
-          <p class="text-gray-700 leading-relaxed">
-            Layanan rental mobil berkontribusi aktif dalam mengurangi emisi
-            karbon untuk masa depan yang lebih hijau dan berkelanjutan.
-          </p>
+          <h4 class="text-xl font-semibold mb-3">💡 skil saya</h4>
+          <p class="text-gray-700 leading-relaxed">network</p>
         </div>
 
         <div class="bg-gray-100 rounded-md p-6 text-left">

@@ -1,6 +1,5 @@
 <template>
   <div class="bg-white text-gray-800">
-    <!-- Hero Section - Responsive Height -->
     <section
       class="relative h-[500px] md:h-[600px] lg:h-[700px] bg-cover bg-center animate-fadeIn"
       :style="{ backgroundImage: `url(${heroImg})` }"
@@ -27,7 +26,6 @@
       </div>
     </section>
 
-    <!-- Features Section -->
     <section class="py-12 md:py-16 bg-white text-center">
       <h2 class="text-2xl md:text-3xl font-bold mb-3 px-4">
         Mengapa Memilih Mobil Listrik?
@@ -50,7 +48,6 @@
       </div>
     </section>
 
-    <!-- Cars Section -->
     <section class="bg-gray-100 py-12 md:py-16 text-center">
       <h2 class="text-2xl md:text-3xl font-bold mb-3 animate-fadeIn px-4">
         Pilihan Mobil Listrik Kami
@@ -67,6 +64,7 @@
           v-for="(c, idx) in cars"
           :key="c.id"
           v-bind="c"
+          @inquire="handleInquire"
           :class="`animate-slideUp animation-delay-${idx * 150}`"
           class="hover:scale-105 hover:shadow-xl transition-all duration-300"
         />
@@ -79,7 +77,6 @@
       </button>
     </section>
 
-    <!-- CTA Section -->
     <section class="bg-gray-200 py-12 md:py-16 text-center animate-fadeIn">
       <div class="max-w-4xl mx-auto px-4 sm:px-6">
         <h2 class="text-2xl md:text-3xl font-bold mb-4">
@@ -116,6 +113,10 @@ const router = useRouter();
 const goToCars = () => router.push("/cars");
 const goToContact = () => router.push("/contact");
 
+const handleInquire = (payload) => {
+  router.push(`/contact?car=${encodeURIComponent(payload.name || payload.id)}`);
+};
+
 const features = [
   {
     id: 1,
@@ -140,7 +141,7 @@ const features = [
 const cars = [
   {
     id: 1,
-    name: "wuling",
+    name: "Wuling Air",
     image: wulingImg,
     capacity: 2,
     range: 100,
@@ -149,7 +150,7 @@ const cars = [
   },
   {
     id: 2,
-    name: "Hyundai",
+    name: "Hyundai KONA",
     image: hyundaiImg,
     capacity: 4,
     range: 356,
@@ -158,7 +159,7 @@ const cars = [
   },
   {
     id: 3,
-    name: "Toyota",
+    name: "Toyota cZ4X",
     image: toyotaImg,
     capacity: 5,
     range: 300,

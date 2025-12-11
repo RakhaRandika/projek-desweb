@@ -4,6 +4,7 @@ import DaftarMobilPage from "@/view/Daftarmobil.vue";
 import TentangKamiPage from "@/view/Tentangkami.vue";
 import LayananPage from "@/view/Layanan.vue";
 import KontakPage from "@/view/Kontak.vue";
+import Tentangsaya from "@/view/tentangsaya.vue";
 
 export default createRouter({
   history: createWebHistory(),
@@ -13,5 +14,6 @@ export default createRouter({
     { path: "/about", name: "TentangKamiPages", component: TentangKamiPage },
     { path: "/service", name: "LayananPages", component: LayananPage },
     { path: "/contact", name: "KontakPages", component: KontakPage },
+    { path: "/tentangsaya", name: "tentangsaya", component: Tentangsaya },
   ],
 });

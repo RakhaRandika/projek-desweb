@@ -85,7 +85,7 @@
       <div class="mt-auto flex justify-center w-full pt-4 pb-2">
         <button
           @click="sewaMobil"
-          class="px-23 py-2.5 rounded-xl bg-black text-white text-sm font-bold hover:bg-gray-800 hover:scale-105 transform transition-all duration-300 shadow-md"
+          class="px-23 py-2.5 rounded-xl bg-yellow-500 text-white text-sm font-bold hover:bg-gray-800 hover:scale-105 transform transition-all duration-300 shadow-md"
         >
           Hubungi kami
         </button>
@@ -105,6 +105,12 @@ export default {
     range: Number,
     power: Number,
     price: String,
+  },
+  emits: ["inquire"],
+  methods: {
+    sewaMobil() {
+      this.$emit("inquire", { id: this.id, name: this.name });
+    },
   },
 };
 </script>

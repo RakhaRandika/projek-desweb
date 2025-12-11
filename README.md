@@ -1,38 +1,61 @@
-# mobil
+nama : muhammad Rakha Randika
+nim : 11231060
 
-This template should help get you started developing with Vue 3 in Vite.
+items center
 
-## Recommended IDE Setup
+    <section
+      class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center"
+    >
+      <div>
+        <h3 class="text-2xl font-bold mb-5 text-emerald-700">
+          Muhammad Rakha Randika
+        </h3>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          <span class="font-semibold text-emerald-600"
+            >Muhammad Rakha Randika</span
+          >
+          mahasiswa itk informatikas 2023 hobi beramain bola memiliki teman
+          teman hidup dengan bahagia
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          memiliki mimpi menjadi ornag kaya .
+        </p>
+        <p class="text-gray-700 leading-relaxed"></p>
+      </div>
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+      <div
+        class="overflow-hidden rounded-2xl shadow-xl transform hover:scale-[1.02] transition duration-300 border border-gray-200"
+      >
+        <img
+          class="w-full h-[420px] object-cover"
+          src="@/assets/rakha.png"
+          alt="EV Rent - mobil listrik"
+        />
+      </div>
+    </section>
 
-## Recommended Browser Setup
+    <section class="max-w-6xl mx-auto px-6 pb-10">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-100 rounded-md p-6 text-left">
+          <h4 class="text-xl font-semibold mb-3">💡 skil saya</h4>
+          <p class="text-gray-700 leading-relaxed">network</p>
+        </div>
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+        <div class="bg-gray-100 rounded-md p-6 text-left">
+          <h4 class="text-xl font-semibold mb-3">🎯 berpengalaman</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li>magang di pt icon +</li>
+          </ul>
+        </div>
+        <div class="bg-gray-100 rounded-md p-6 text-left">
+          <h4 class="text-xl font-semibold mb-3">🎯 hidup mejadi mimpi</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li>menjadi pemain bola</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+  </main>
+  <AppFooter />
+</template>

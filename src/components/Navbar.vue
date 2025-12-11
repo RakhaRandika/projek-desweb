@@ -95,7 +95,7 @@
               class="block py-2 px-3 rounded md:p-0 transition-colors text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700"
               active-class="!text-green-700 font-bold"
             >
-              Tentang Kami
+              Tentang saya
             </router-link>
           </li>
           <li>
@@ -114,6 +114,23 @@
               active-class="!text-green-700 font-bold"
             >
               Kontak
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              to="/service"
+              class="block py-2 px-3 rounded md:p-0 transition-colors text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700"
+              active-class="!text-green-700 font-bold"
+            >
+              tentang kami
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              to="/saya"
+              class="block py-2 px-3 rounded md:p-0 transition-colors text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-green-700"
+              active-class="!text-green-700 font-bold"
+            >
             </router-link>
           </li>
         </ul>
@@ -152,7 +169,7 @@
             active-class="bg-green-50 text-green-700 font-bold"
             @click="mobileMenuOpen = false"
           >
-            Tentang Kami
+            Tentang saya
           </router-link>
         </li>
         <li>
@@ -175,6 +192,25 @@
             Kontak
           </router-link>
         </li>
+        <li>
+          <router-link
+            to="/service"
+            class="block py-2 px-3 rounded hover:bg-gray-100 hover:text-green-700"
+            active-class="bg-green-50 text-green-700 font-bold"
+            @click="mobileMenuOpen = false"
+          >
+            tentang kami
+          </router-link>
+        </li>
+        <li>
+          <router-link
+            to="/tentang saya"
+            class="block py-2 px-3 rounded hover:bg-gray-100 hover:text-green-700"
+            active-class="bg-green-50 text-green-700 font-bold"
+            @click="mobileMenuOpen = false"
+          >
+          </router-link>
+        </li>
       </ul>
     </div>
 
@@ -185,6 +221,7 @@
 </template>
 
 <script setup>
+import Tentangsaya from "@/view/tentangsaya.vue";
 import { ref, onMounted, onUnmounted } from "vue";
 
 const mobileMenuOpen = ref(false);

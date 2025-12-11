@@ -10,7 +10,7 @@
         class="px-4 py-1.5 rounded-full border text-sm transition"
         :class="
           modelValue === cat
-            ? 'bg-black text-white border-black'
+            ? 'bg-yellow-500 text-yellow border-yellow-500'
             : 'bg-gray-100 hover:bg-gray-200 border-gray-200 text-gray-700'
         "
       >

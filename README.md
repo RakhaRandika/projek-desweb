@@ -2,6 +2,24 @@ nama : muhammad Rakha Randika
 nim : 11231060
 
 items center
+class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center" >
+<div>
+<h3 class="text-2xl font-bold mb-5 text-emerald-700">
+Muhammad Rakha Randika
+</h3>
+<p class="text-gray-700 leading-relaxed mb-4">
+<span class="font-semibold text-emerald-600"
+            >Muhammad Rakha Randika</span
+          >
+mahasiswa itk informatikas 2023 hobi beramain bola memiliki teman
+teman hidup dengan bahagia
+</p>
+<p class="text-gray-700 leading-relaxed mb-4">
+memiliki mimpi menjadi ornag kaya .
+</p>
+<p class="text-gray-700 leading-relaxed"></p>
+
+tentang saya
 
     <section
       class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center"
@@ -54,8 +72,3 @@ items center
           </ul>
         </div>
       </div>
-    </section>
-
-  </main>
-  <AppFooter />
-</template>
